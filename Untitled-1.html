@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagjacko meni</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .ureduvanje{
+            background-color: aqua;
+            
+            width:940px;
+        }
+        
+        .dropbtn{
+            color:lightseagreen;
+            width: 130px;
+            height: 50px;
+            background-color: indigo;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            border: 2px solid white;
+        }
+        /* //ureduvanje na kopceto */
+        .dropbtn:hover{
+            background-color: blueviolet;
+            color: pink;
+        }
+        /* //klasa za koga ke se postavi gluvceto na kopceto */
+        .dropdown{
+            position: relative;
+            display: inline-block;
+        }
+        /* //klasa za pagjackiot element */
+        .dropdown-content{
+            position: absolute;
+            display: none;
+            background-color: yellow;
+            width:128px;
+            box-shadow: 5px 5px 5px 5px yellowgreen;
+            z-index: 1;
+        }
+        .dropdown2{
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content2{
+            position: absolute;
+            display: none;           
+            margin-top: -61px;
+            margin-left: 133px;
+            width: 128px;
+            box-shadow: 5px 5px 5px 5px yellowgreen;
+            z-index: 1;
+        }
+        .dropdown2:hover .dropdown-content2
+        {
+            display: block;
+        }
+        /* //klasa za sodrzinata na pagjackiot element */
+        .dropdown:hover .dropdown-content
+        {
+            display: block;
+        }
+        .dropdown3{
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content3{
+            position: absolute;
+            display: none;          
+            margin-top: -61px;
+            margin-left: 133px;
+            width: 128px;
+            box-shadow: 5px 5px 5px 5px yellowgreen;
+            z-index: 1;
+        }
+        .dropdown3:hover .dropdown-content3
+        {
+            display: block;
+        }
+        a{
+            color:lightseagreen;
+            width: 128px;
+            height: 50px;
+            background-color: indigo;
+            padding-top: 20px;
+          display: block;
+            text-decoration: none;
+            text-align: center;
+            border: 2px solid white;
+        }
+        /* //klasa za prikazuvanje na sodrzinata koga ke se postavi gluvceto na elementot */
+        .dropdown-content a{
+            color:lightseagreen;
+            width: 128px;
+            height: 50px;
+            background-color: indigo;
+            padding: 3px 3px;
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            
+        }
+        .dropdown-content2 a:hover{
+            background-color: coral;
+        }
+        /* //klasa za ureduvanje na linkovite vo pagjackoto meni */
+        .dropdown-content a:hover{
+            background-color: coral;
+        }
+        /* // klasa za menuvanje na linkot koga ke se postavi gluvceto na nego */
+        .dropdown:hover .dropbtn{
+            background-color: darkorange;
+        }
+        /* //klasa za menuvanje na izgledot na kopceto koga ke se pojavi sodrzinata na pagjackoto meni */
+        
+    </style>
+</head>
+<body>
+    <p> Postavete go gluvceto vrz kopceto za da se otvori pagjackoto meni</p>
+     <div class="ureduvanje">
+        <button class="dropbtn"> LOREM</button>            
+            <button class="dropbtn"> REPPELENDUS</button>
+            <button class="dropbtn"> VOLUPTATE</button>
+    <div class="dropdown">
+        <button class="dropbtn"> LABORUM</button>
+        <div class="dropdown-content">
+        <a href="https://www.facebook.com/"> Lorem</a>
+            <a href="https://www.facebook.com/"> Nisi</a> 
+            <div class="dropdown2">
+            <a href="https://www.facebook.com/">Laborum</a>                
+                <div class="dropdown-content2">                       
+                  <a href="https://www.facebook.com/">Lorem</a>  
+                  <a href="https://www.facebook.com/">Nisi</a>
+                  <a href="https://www.facebook.com/">Tenetur</a>
+                  <div class="dropdown3">
+                  <a href="https://www.facebook.com/">Laborum</a>
+                  <div class="dropdown-content3">
+                    <a href="https://www.facebook.com/">Lorem</a>
+                    <a href="https://www.facebook.com/">Nisi</a>
+                    </div>
+                    </div>
+                  <a href="https://www.facebook.com/"> Quidem</a>
+                  </div>
+                 </div>                          
+            <a href="https://www.facebook.com/">Ullam</a>
+            <a href="https://www.facebook.com/">Quidem</a>
+        </div>    
+    </div>        
+            <button class="dropbtn">Tempore</button>            
+            <button class="dropbtn">Omnis</button>
+            <button class="dropbtn">Sint</button>             
+  </div>  
+
+</body>
+</html>
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) die("Login required");
+require "config.php";
+?>
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+<meta charset="UTF-8">
+<title>Објави возило</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2 class="page-title">🚗 Објави возило</h2>
+
+<form action="save_listing.php" method="post" enctype="multipart/form-data" class="form">
+
+    <div class="row">
+        <div>
+            <label>Наслов</label>
+            <input type="text" name="title" required>
+        </div>
+
+      
+    </div>
+
+    <label>Опис</label>
+    <textarea name="description" required></textarea>
+
+    <div class="row">
+        <div>
+           <label>Бренд</label>
+<select id="brand" name="brand" required>
+    <option value="">Избери бренд</option>
+    <?php foreach ($CAR_DATA as $brand => $models): ?>
+        <option value="<?= htmlspecialchars($brand) ?>">
+            <?= htmlspecialchars($brand) ?>
+        </option>
+    <?php endforeach; ?>
+</select>
+
+<label>Модел / Верзија</label>
+<select id="model" name="model" required disabled>
+    <option value="">Избери модел</option>
+</select>
+
+
+    <div class="row">
+        <div>
+            <label>Година</label>
+            <input type="number" name="year" required>
+        </div>
+
+        <div>
+            <label>Коњски сили</label>
+            <input type="number" name="power" required>
+        </div>
+
+        <div>
+            <label>Километража</label>
+            <input type="number" name="mileage" required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div>
+            <label>Гориво</label>
+            <select name="fuel">
+                <option>Petrol</option>
+                <option>Diesel</option>
+                <option>Hybrid</option>
+                <option>Electric</option>
+                <option>LPG</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Менувач</label>
+            <select name="transmission">
+                <option>Manual</option>
+                <option>Automatic</option>
+            </select>
+        </div>
+<div class="row">
+    <div>
+        <label>Тип на возило</label>
+        <select name="vehicle_type" required>
+            <option value="">Избери тип</option>
+            <option>Sedan</option>
+            <option>Hatchback</option>
+            <option>SUV</option>
+            <option>Coupe</option>
+            <option>Convertible</option>
+            <option>Wagon</option>
+            <option>Van</option>
+            <option>Pickup</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Состојба</label>
+        <select name="condition" required>
+            <option value="">Избери</option>
+            <option>New</option>
+            <option>Used</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Начин на понуда</label>
+        <select name="offer_type" required>
+            <option value="">Избери</option>
+            <option>Selling</option>
+            <option>Leasing</option>
+        </select>
+    </div>
+</div>
+
+        <div>
+            <label>Град</label>
+            <select name="city">
+                <option>Скопје</option>
+                <option>Битола</option>
+                <option>Прилеп</option>
+                <option>Тетово</option>
+                <option>Охрид</option>
+                <option>Велес</option>
+                <option>Куманово</option>
+                <option>Штип</option>
+                <option>Струмица</option>
+            </select>
+        </div>
+    </div>
+
+    <label>Слики (до 10)</label>
+    <input type="file" name="images[]" multiple accept="image/*">
+  <div>
+            <label>Цена</label>
+            <div class="inline">
+                <input type="number" name="price" required>
+                <select name="currency">
+                    <option>MKD</option>
+                    <option>EUR</option>
+                </select>
+            </div>
+        </div>
+    <button class="btn">Објави оглас</button>
+
+</form>
+
+
+<!-- ONE CLEAN SCRIPT -->
+<script>
+const CAR_DATA = <?= json_encode($CAR_DATA, JSON_UNESCAPED_UNICODE) ?>;
+
+const brandSelect = document.getElementById("brand");
+const modelSelect = document.getElementById("model");
+
+brandSelect.addEventListener("change", function () {
+    modelSelect.innerHTML = '<option value="">Избери модел</option>';
+    modelSelect.disabled = true;
+
+    const brand = this.value;
+    if (!brand || !CAR_DATA[brand]) return;
+
+    Object.entries(CAR_DATA[brand]).forEach(([model, versions]) => {
+        // model header (disabled)
+        const groupOpt = document.createElement("option");
+        groupOpt.textContent = "— " + model + " —";
+        groupOpt.disabled = true;
+        modelSelect.appendChild(groupOpt);
+
+        // versions under model
+        versions.forEach(version => {
+            const opt = document.createElement("option");
+            opt.value = model + " " + version;
+            opt.textContent = model + " " + version;
+            modelSelect.appendChild(opt);
+        });
+    });
+
+    modelSelect.disabled = false;
+});
+</script>
+
+
+</body>
+</html>
